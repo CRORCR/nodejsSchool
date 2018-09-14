@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
     <file url="file://$PROJECT_DIR$/level/demo1/arr.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/level/demo1/foreach.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/level/demo1/forin.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/level/demo1/forof.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/level/demo1/head.html" charset="GBK" />
-    <file url="PROJECT" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/level/demo1/map.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/readme.MD" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
