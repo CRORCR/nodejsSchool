@@ -1,11 +1,11 @@
-var arr =[1,2,3,4,5];
-var m = ([["name","李长全"],["age",25]]);
-var s = new Set(["hello","world"]);
+let arr =[1,2,3,4,5];
+let m = ([["name","李长全"],["age",25]]);
+let s = new Set(["hello","world"]);
 
 num = function () {
-    var n = 123;
-    var n2 = 12.3;
-    var n3 = -99;
+    let n = 123;
+    let n2 = 12.3;
+    let n3 = -99;
     console.log(n);
     console.log(n);
     console.log(n2);
@@ -16,10 +16,10 @@ num = function () {
 };
 
 forIn = function () {
-    var arr = ["1", 2, 3, "hello"];
+    let arr = ["1", 2, 3, "hello"];
 //for in 拿的是key,也可以变量对象,拿到属性
 // for ... in对Array的循环得到的是String而不是Number
-    for (var k in arr) {
+    for (let k in arr) {
         console.log(k)
         //hasOwnProperty() 然后可以根据是否自己自有的,不是继承来的
     }
@@ -53,11 +53,11 @@ m.forEach(function (value) {
 
 mapTest=function () {
     //map第一种使用
-    var m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);
-    console.log(m.get('Michael'));
+    let m2 = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);
+    console.log(m2.get('Michael'));
 
 //map第二种使用
-    var m = new Map(); // 空Map
+    let m = new Map(); // 空Map
     m.set('Adam', 67); // 添加新的key-value
     m.set('Bob', 59);
     m.has('Adam'); // 是否存在key 'Adam': true
