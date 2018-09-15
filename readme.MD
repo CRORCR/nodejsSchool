@@ -1,9 +1,9 @@
-js没有浮点型,统一使用int类型
-浮点数在运算的时候,会有精度问题,所以 1/3 ===(1-2/3) false
+1.js没有浮点型,统一使用number类型
+2.浮点数在运算的时候,会有精度问题,所以 1/3 ===(1-2/3) false
 处理这类问题,使用绝对值,自己控制精度 Math.abs(1/3 - (1-2/3))<0.0001 true
-js的数组可以包括任意数据类型 [1, 3.14, 'Hello', null, true];
-js的对象是一组由键-值组成的无序集合 对象的键都是字符串类型，值可以是任意数据类型
-访问属性通过.操作符完成的，但这要求属性名必须是一个有效的变量名。如果属性名包含特殊字符，就必须用''括起来
+3.js的数组可以包括任意数据类型 [1, 3.14, 'Hello', null, true];
+4.js的对象是一组由键-值组成的无序集合 对象的键都是字符串类型，值可以是任意数据类型
+5.访问属性通过.操作符完成的，但这要求属性名必须是一个有效的变量名。如果属性名包含特殊字符，就必须用''括起来
 var person = {
     name: 'Bob',
     age: 20,
@@ -11,17 +11,17 @@ var person = {
     city: 'Beijing',
     hasCar: true,
     zipcode: null,
-     'middle-school': 'No.1 Middle School'  //最后一行不加, 如果特殊字符,需要加''
+    'middle-school': 'No.1 Middle School'  //最后一行不加, 如果特殊字符,需要加''
 };
 
-对象也可以删除属性
+6.对象也可以删除属性
 delete xiaoming.age; // 删除age属性
 xiaoming.age; // undefined
 delete xiaoming['name']; // 删除name属性
-判断属性是否存在 'name' in xiaoming; // true 可能是继承来的
+7.判断属性是否存在 'name' in xiaoming; // true 可能是继承来的
 xiaoming.hasOwnProperty('name'); // true 只能是自己的
 
-js中，使用等号=对变量进行赋值
+8.js中，使用等号=对变量进行赋值
 可以把任意数据类型赋值给变量,同一个变量可以反复赋值，而且可以是不同类型的变量，
 但是要注意只能用var申明一次
 
@@ -31,7 +31,7 @@ a = 'ABC';   // a变为字符串
 这种变量本身类型不固定的语言称之为动态语言
 静态语言在定义变量时必须指定变量类型，如果赋值的时候类型不匹配，就会报错(java)
 
-js在设计之初，为了方便初学者学习，并不强制要求用var申明变量
+9.js在设计之初，为了方便初学者学习，并不强制要求用var申明变量
 这个设计错误带来了严重的后果：
 如果一个变量没有通过var申明就被使用，那么该变量就自动被申明为全局变量：
 i = 10; // i现在是全局变量
@@ -154,3 +154,38 @@ function foo() {
 var x=1, y=2;
 [x, y] = [y, x]
 
+Node.js是建立在谷歌Chrome的JavaScript引擎(V8引擎)的Web应用程序框架
+Node.js = 运行环境+ JavaScript库
+
+方法
+this,指向调用者,如果是内置函数,这个this指向外层的函数
+但是可以修改this的指向,使用apply,函数直接可以调用
+getAge.apply(xiaoming, []); // 25, this指向xiaoming, 参数为空
+
+apply是把参数按照数组的形式传入,还有一个函数call,是把参数按照可变参数逐个添加
+Math.max.apply(null, [3, 5, 4]); // 5
+Math.max.call(null, 3, 5, 4); // 5
+
+高阶函数
+高阶函数就是把函数作为参数传递和使用
+function add(x, y, f) {
+    return f(x) + f(y);
+}
+
+map/reduce
+filter
+
+箭头函数
+x => x * x
+相当于如下函数:
+function (x) {
+    return x * x;
+}
+
+包装类型
+使用new创建,类型会变为object,与原来的类型已经不相等了
+/*
+var n = new Number(123);
+var b = new Boolean(true);
+var s = new String('str');
+*/

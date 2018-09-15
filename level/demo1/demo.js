@@ -64,7 +64,7 @@ mapTest=function () {
     m.get('Adam'); // 67
     m.delete('Adam'); // 删除key 'Adam'
     m.get('Adam'); // undefined
-}
+};
 // num();
 // forIn();
 // arr();
