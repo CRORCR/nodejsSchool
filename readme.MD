@@ -189,3 +189,4 @@ var n = new Number(123);
 var b = new Boolean(true);
 var s = new String('str');
 */
+尽量不使用包装对象！尤其是针对string类型
