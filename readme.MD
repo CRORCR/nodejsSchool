@@ -190,3 +190,46 @@ var b = new Boolean(true);
 var s = new String('str');
 */
 尽量不使用包装对象！尤其是针对string类型
+普通的类型就可以满足使用了,也可以强制转换
+var n = Number('123'); // 123，相当于parseInt()或parseFloat()
+typeof n; // 'number'
+
+var b = Boolean('true'); // true
+typeof b; // 'boolean'
+
+var b2 = Boolean('false'); // true! 'false'字符串转换结果为true！因为它是非空字符串！
+var b3 = Boolean(''); // false
+
+var s = String(123.45); // '123.45'
+typeof s; // 'string'
+
+number对象调用toString()
+123..toString(); // '123', 注意是两个点！
+(123).toString(); // '123'
+
+js时间处理
+var now = new Date();
+now; // Wed Jun 24 2015 19:49:22 GMT+0800 (CST)
+now.getFullYear(); // 2015, 年份
+now.getMonth(); // 5, 月份，注意月份范围是0~11，5表示六月
+now.getDate(); // 24, 表示24号
+now.getDay(); // 3, 表示星期三
+now.getHours(); // 19, 24小时制
+now.getMinutes(); // 49, 分钟
+now.getSeconds(); // 22, 秒
+now.getMilliseconds(); // 875, 毫秒数
+now.getTime(); // 1435146562875, 时间戳
+
+可以自己指定日期
+var d = new Date(2015, 5, 19, 20, 15, 30, 123);
+d; // Fri Jun 19 2015 20:15:30 GMT+0800 (CST)
+
+//字符串转data,先转时间戳,再转data
+使用Date.parse()时传入的字符串使用实际月份01~12，转换为Date对象后getMonth()获取的月份值为0~11。
+var d = Date.parse('2015-06-24T19:49:22.875+08:00');
+d; // 1435146562875
+var d = new Date(1435146562875);
+d; // Wed Jun 24 2015 19:49:22 GMT+0800 (CST)
+d.getMonth(); // 5
+
+new Date(1435146562875).toLocaleString()  显示当地时间
